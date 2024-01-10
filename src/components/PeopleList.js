@@ -30,7 +30,7 @@ function PeopleList({ list, getPeople }) {
     setInput(value);
     if (value.length) {
       const filteredData = list.results.filter((val) =>
-        val.name.includes(value)
+        val?.name?.toLowerCase().includes(value?.toLowerCase())
       );
       setPeoples(filteredData);
     } else {
